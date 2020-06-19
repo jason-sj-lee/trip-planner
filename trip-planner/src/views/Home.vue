@@ -18,10 +18,10 @@ export default {
 <style>
   .cloud-bg {
   z-index: 0;
-  position: absolute;
-  height: 1000px;
+  position: fixed;
+  height: 100vh;
   width: 100%;
-  bottom: 0;
+  top: 0;
   }
 </style>
 
