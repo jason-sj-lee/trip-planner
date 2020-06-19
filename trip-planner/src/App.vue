@@ -1,8 +1,14 @@
 <template>
-  <v-app>
-    <router-link to="/">Home</router-link>
-    <router-link to="/results">Results</router-link>
-    <router-view></router-view>
+  <v-app >
+    <v-app-bar class="nav" color="transparent" dense flat app>
+      <router-link to="/"></router-link>
+      <router-link to="/results">Results</router-link>
+    </v-app-bar>
+   
+    <v-content>
+      <router-view></router-view>
+    </v-content>
+    
   </v-app>
 </template>
 
@@ -19,3 +25,9 @@ export default {
   }),
 };
 </script>
+
+<style>
+  .nav {
+    display: inline;
+  }
+</style>

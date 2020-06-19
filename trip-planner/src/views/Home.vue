@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
   </div>
 </template>
 
@@ -14,3 +13,16 @@ export default {
   }
 }
 </script>
+
+<style>
+  .home {
+    background: url("../assets/background_v2.jpg");
+    width: 100%;
+    height: 70%;
+    background-size: 100%;
+    bottom: 100px;
+    position: fixed;
+    top: 0;
+  }
+</style>
+
