@@ -2,7 +2,7 @@
   <v-app >
     <background></background>
     <v-app-bar class="nav" color="transparent" dense flat app>
-      <router-link to="/"></router-link>
+      <router-link to="/">Home</router-link>
       <router-link to="/results">Results</router-link>
     </v-app-bar>
    
@@ -29,6 +29,9 @@ export default {
 };
 </script>
 
-<style>
-
+<style scoped>
+.nav a {
+  color: black;
+  text-decoration: none;
+}
 </style>
