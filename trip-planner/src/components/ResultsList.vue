@@ -12,7 +12,7 @@ export default {
 
 <style scoped>
 .list {
-  background-color: grey;
+  border: grey 1px solid;
   width: 30%;
   height: 90%;
   margin-top: 5%;
