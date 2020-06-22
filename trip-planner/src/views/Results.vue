@@ -20,7 +20,7 @@ export default {
 <style scoped>
 .about {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   background-color: white;
   z-index: 1;
   height: 75vh;
