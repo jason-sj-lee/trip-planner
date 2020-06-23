@@ -6,13 +6,13 @@
 
 <script>
 export default {
-  
-}
+
+};
 </script>
 
 <style scoped>
 .list {
-  border: grey 1px solid;
+  border: blue 1px solid;
   width: 30%;
   height: 90%;
   margin-top: 5%;

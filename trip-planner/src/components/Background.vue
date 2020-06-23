@@ -10,7 +10,7 @@ export default {};
 
 <style scoped>
   .cloud-bg {
-  z-index: 0;
+  z-index: 0;                                                                                                                
   position: fixed;
   height: 100vh;
   width: 100%;

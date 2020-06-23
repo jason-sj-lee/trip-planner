@@ -1,18 +1,22 @@
 <template>
   <div class="about">
-    <results-list></results-list>
-    <results-list></results-list>
-    <results-list></results-list>
+    <results-plane></results-plane>
+    <results-hotel></results-hotel>
+    <results-food></results-food>
   </div>
 </template>
 
 <script>
-import ResultsList from '../components/ResultsList'
+import ResultsPlane from '../components/ResultsPlane'
+import ResultsHotel from '../components/ResultsHotel'
+import ResultsFood from '../components/ResultsFood'
 
 export default {
   name: 'results',
   components: {
-    ResultsList
+    ResultsPlane,
+    ResultsHotel,
+    ResultsFood
   }
 };
 </script>
