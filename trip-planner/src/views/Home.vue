@@ -2,8 +2,8 @@
   <div class="home">
     <p class="motto">Where are we <strong>going</strong> today?</p>
     <div class="main-board">
-      <from-to></from-to>
-      <from-to></from-to>
+      <from-to fromTo="From"></from-to>
+      <from-to fromTo="To"></from-to>
       <dep-arr></dep-arr>
     </div>
   </div>

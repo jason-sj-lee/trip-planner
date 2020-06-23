@@ -1,14 +1,26 @@
 <template>
   <v-card class="from-to-card" outlined>
-    <p class="from-to-text">From</p>
-    <p class="location">Toronto</p>
-    <p class="airport">YYZ, Toronto, CA</p>
+    <p class="from-to-text">{{ fromTo }}</p>
+    <!-- <p class="location">Toronto</p> -->
+    <v-autocomplete class="location" :items="cities"></v-autocomplete>
   </v-card>
 </template>
 
 <script>
 export default {
-  
+  name: 'FromTo',
+  props: {
+    fromTo: null
+  },
+  data: function() {
+    return {
+      cities: [
+        "London", "New York", "Paris", "Tokyo", "Moscow", "Dubai", "Singapore", "Barcelona", "Los Angeles",
+        "Rome", "San Fransisco", "Madrid", "chicago", "Amsterdamn", "Beijing", "Toronto", "Hong Kong", 
+        "Toronto", "Seoul"
+      ]
+    }
+  }
 }
 </script>
 
@@ -19,6 +31,8 @@ export default {
     margin: 40px;
     flex-direction: column;
     align-items: center;
+    align-content: center;
+    width: 4%;
   }
 
   .from-to-text {
@@ -31,17 +45,11 @@ export default {
   }
 
   .location {
-    font-weight: bold;
+    /* font-weight: bold;
     font-size: 30px;
     margin-left: 10px;
-    margin-bottom: 0;
-  }
-
-  .airport {
-    font-weight: bold;
-    font-size: 14px;
-    color: #4E4E4E;
+    margin-bottom: 0; */
+    width: 80%;
     margin-left: 10px;
-    margin-bottom: 0;
   }
 </style>
