@@ -45,11 +45,11 @@ export default {
   }
 
   .location {
-    /* font-weight: bold;
-    font-size: 30px;
-    margin-left: 10px;
+    /* margin-left: 10px;
     margin-bottom: 0; */
     width: 80%;
     margin-left: 10px;
+    font-weight: bold;
+    font-size: 30px;
   }
 </style>

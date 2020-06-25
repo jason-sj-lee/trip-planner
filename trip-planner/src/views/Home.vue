@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons" rel="stylesheet">
     <p class="motto">Where are we <strong>going</strong> today?</p>
     <div class="main-board">
       <from-to fromTo="From"></from-to>
@@ -15,7 +16,6 @@ import FromTo from '@/components/FromTo'
 import DepArr from '@/components/DepArr'
 
 export default {
-  
   name: 'Home',
   components: {
     FromTo,
@@ -44,7 +44,7 @@ export default {
     border-radius: 15px;
     
     height: 40%;
-    width: 80%;
+    width: 90%;
     margin-top: 12%;
 
     display: flex; 
