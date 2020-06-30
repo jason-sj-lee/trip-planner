@@ -7,16 +7,32 @@
 </template>
 
 <script>
-import ResultsPlane from '../components/ResultsPlane'
-import ResultsHotel from '../components/ResultsHotel'
-import ResultsFood from '../components/ResultsFood'
+import ResultsPlane from "../components/ResultsPlane";
+import ResultsHotel from "../components/ResultsHotel";
+import ResultsFood from "../components/ResultsFood";
+
+import { axios } from "@/plugins/axios";
 
 export default {
-  name: 'results',
+  name: "results",
   components: {
     ResultsPlane,
     ResultsHotel,
     ResultsFood
+  },
+  mounted() {
+    axios
+      .request({
+        url: "/shopping/flight-destinations?origin=SEL",
+        method: "get",
+        baseURL: "https://test.api.amadeus.com/v1",
+        headers: {
+          'Authorization': 'Bearer ACCESSTOKEN' //'Bearer 12345asdf'
+        }
+      })
+      .then(response => {
+        console.log(response.data);
+      });
   }
 };
 </script>
