@@ -14,7 +14,7 @@ export default {
 .list {
   border: red 1px solid;
   width: 30%;
-  height: 90%;
-  margin-top: 5%;
+  height: 100%;
+
 }
 </style>

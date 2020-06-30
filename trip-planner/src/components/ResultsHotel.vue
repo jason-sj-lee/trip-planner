@@ -1,6 +1,6 @@
 <template>
   <div class="list">
-
+    <v-icon x-large>mdi-bed</v-icon>
   </div>
 </template>
 
@@ -14,7 +14,7 @@ export default {
 .list {
   border: green 1px solid;
   width: 30%;
-  height: 90%;
-  margin-top: 5%;
+  height: 100%;
+
 }
 </style>
