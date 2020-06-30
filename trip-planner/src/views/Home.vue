@@ -3,9 +3,13 @@
     <link href="https://fonts.googleapis.com/css?family=Material+Icons" rel="stylesheet">
     <p class="motto">Where are we <strong>going</strong> today?</p>
     <div class="main-board">
-      <from-to fromTo="From"></from-to>
-      <from-to fromTo="To"></from-to>
-      <dep-arr></dep-arr>
+      <v-row>
+          <from-to fromTo="From"></from-to>
+          <from-to fromTo="To"></from-to>
+          <dep-arr></dep-arr>
+          <div class="break"></div>
+          <budget></budget>
+      </v-row>
     </div>
   </div>
 </template>
@@ -14,12 +18,14 @@
 // @ is an alias to /src
 import FromTo from '@/components/FromTo'
 import DepArr from '@/components/DepArr'
+import Budget from '@/components/Budget'
 
 export default {
   name: 'Home',
   components: {
     FromTo,
-    DepArr
+    DepArr,
+    Budget
   }
 }
 </script>
@@ -50,12 +56,18 @@ export default {
     display: flex; 
     flex-direction: row;
     justify-content: space-evenly;
+    flex-wrap: wrap;
   }
 
   .motto {
     font-size: 55px;
     font-weight: 100;
     margin-left: -30%;
+  }
+
+  .break {
+    flex-basis: 100%;
+    height: 0;
   }
 </style>
 
