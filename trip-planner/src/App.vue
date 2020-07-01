@@ -6,19 +6,20 @@
       <router-link to="/results">Results</router-link>
     </v-app-bar>
    
-    <v-content>
+    <v-main>
       <router-view></router-view>
-    </v-content>
+    </v-main>
     
   </v-app>
 </template>
 
 <script>
 import Background from './components/Background.vue';
+import { store } from './store/store';
 
 export default {
   name: 'App',
-
+  store: store,
   components: {
     Background
   },

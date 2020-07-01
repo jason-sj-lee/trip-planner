@@ -23,11 +23,11 @@ export default {
   mounted() {
     axios
       .request({
-        url: "/shopping/flight-destinations?origin=SEL",
+        url: "/shopping/flight-offers?originLocationCode=SYD&destinationLocationCode=BKK&departureDate=2020-08-01&returnDate=2020-08-05&adults=2&includedAirlineCodes=TG&max=3",
         method: "get",
-        baseURL: "https://test.api.amadeus.com/v1",
+        baseURL: "https://test.api.amadeus.com/v2",
         headers: {
-          'Authorization': 'Bearer ACCESSTOKEN' //'Bearer 12345asdf'
+          'Authorization': 'Bearer Z9Eno4NPgeKk0gDYCToPINIojiTd' //'Bearer 12345asdf'
         }
       })
       .then(response => {

@@ -2,7 +2,7 @@
   <v-card class="from-to-card" outlined>
     <p class="from-to-text">{{ fromTo }}</p>
     <!-- <p class="location">Toronto</p> -->
-    <v-autocomplete class="location" :items="cities"></v-autocomplete>
+    <v-autocomplete v-model="selected" class="location" :items="cities"></v-autocomplete>
   </v-card>
 </template>
 
@@ -18,7 +18,24 @@ export default {
         "London", "New York", "Paris", "Tokyo", "Moscow", "Dubai", "Singapore", "Barcelona", "Los Angeles",
         "Rome", "San Fransisco", "Madrid", "chicago", "Amsterdamn", "Beijing", "Toronto", "Hong Kong", 
         "Toronto", "Seoul"
-      ]
+      ],
+      selected:[]
+    }
+  },
+  methods: {
+    checkFromTo: function(array){
+      if (this.fromTo === "From") {
+        this.$store.commit('changeFrom', array)
+      }
+      else {
+        this.$store.commit('changeTo', array)
+      }
+    }
+  },
+  watch: {
+    selected (newSelectedArray, oldSelectedArray) {
+      this.checkFromTo(newSelectedArray);
+      console.log(oldSelectedArray)
     }
   }
 }
