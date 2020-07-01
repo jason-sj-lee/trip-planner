@@ -1,8 +1,8 @@
 <template>
   <div class="about">
-    <results-plane></results-plane>
-    <results-hotel></results-hotel>
-    <results-food></results-food>
+    <results-plane :atoken="this.$data.accessToken"></results-plane>
+    <results-hotel :atoken="this.$data.accessToken"></results-hotel>
+    <results-food :atoken="this.$data.accessToken"></results-food>
   </div>
 </template>
 
@@ -11,8 +11,6 @@ import ResultsPlane from "../components/ResultsPlane";
 import ResultsHotel from "../components/ResultsHotel";
 import ResultsFood from "../components/ResultsFood";
 
-import { axios } from "@/plugins/axios";
-
 export default {
   name: "results",
   components: {
@@ -20,19 +18,8 @@ export default {
     ResultsHotel,
     ResultsFood
   },
-  mounted() {
-    axios
-      .request({
-        url: "/shopping/flight-offers?originLocationCode=SYD&destinationLocationCode=BKK&departureDate=2020-08-01&returnDate=2020-08-05&adults=2&includedAirlineCodes=TG&max=3",
-        method: "get",
-        baseURL: "https://test.api.amadeus.com/v2",
-        headers: {
-          'Authorization': 'Bearer Z9Eno4NPgeKk0gDYCToPINIojiTd' //'Bearer 12345asdf'
-        }
-      })
-      .then(response => {
-        console.log(response.data);
-      });
+  data() {
+    return {accessToken: 'oCCb8HS2kmxYOYvGOxqpC75CBPLT'}
   }
 };
 </script>
