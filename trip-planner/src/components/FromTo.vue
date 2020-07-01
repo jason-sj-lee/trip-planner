@@ -3,8 +3,6 @@
     <p class="from-to-text">{{ fromTo }}</p>
     <!-- <p class="location">Toronto</p> -->
     <v-autocomplete v-model="selected" class="location" :items="cities"></v-autocomplete>
-    <p>from: {{ $store.getter.changeFrom }}</p>
-    <p>to: {{ $store.getter.changeTo }}</p>
   </v-card>
 </template>
 
