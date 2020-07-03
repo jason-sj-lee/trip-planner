@@ -11,6 +11,8 @@ import ResultsPlane from "../components/ResultsPlane";
 import ResultsHotel from "../components/ResultsHotel";
 import ResultsFood from "../components/ResultsFood";
 
+import { store } from "../store/store"
+
 export default {
   name: "results",
   components: {
@@ -19,7 +21,14 @@ export default {
     ResultsFood
   },
   data() {
-    return {accessToken: 'R1G2URHZs3Om2Auhmtd167hApcAY'}
+    return {
+      store: store,
+      accessToken: 'R1G2URHZs3Om2Auhmtd167hApcAY',
+      from: store.state.from,
+      to: store.state.to,
+      arr: store.state.arr,
+      dep: store.state.dep
+    }
   }
 };
 </script>
