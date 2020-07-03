@@ -36,7 +36,7 @@
         </template>
         <v-date-picker v-model="dates" range>
           <!-- <v-spacer></v-spacer> -->
-          <v-btn text color="primary" @click="modal = false">Cancel</v-btn>
+          <v-btn text color="primary" @click="modal=false">Cancel</v-btn>
           <v-btn text color="primary" @click="$refs.dialog.save(dates)">OK</v-btn>
         </v-date-picker>
       </v-dialog>
@@ -46,14 +46,19 @@
 <script>
 export default {
   name: 'Calendar',
-  data: () => ({
-    dates: [new Date().toISOString().substr(0, 10), new Date().toISOString().substr(0, 10)],
-  }),
+  data() {
+    return {
+      dates: [new Date().toISOString().substr(0, 10), new Date().toISOString().substr(0, 10)],
+      modal: ''
+    }
+  },
   computed: {
-    dateRangeText_1 () {
+    dateRangeText_1 () { 
+      this.$store.commit('depDate', this.dates[0])
       return this.dates[0];
     },
     dateRangeText_2 () {
+      this.$store.commit('arrDate', this.dates[1])
       return this.dates[1];
     }
   }

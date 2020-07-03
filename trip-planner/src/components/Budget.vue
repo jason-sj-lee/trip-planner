@@ -1,5 +1,6 @@
 <template>
-  <v-btn class="budget-btn" depressed color="black">
+  <v-btn class="budget-btn" depressed  dark color="grey darken-4">
+    Let's Go!
   </v-btn>
 </template>
 
@@ -11,9 +12,9 @@ export default {
 
 <style scoped>
   .budget-btn {
-    flex-grow: 0.25;
     margin: 40px;
+    padding: 10px 10px;
     flex-direction: row;
-    height: 100px;
+    width: 20%;
   }
 </style>

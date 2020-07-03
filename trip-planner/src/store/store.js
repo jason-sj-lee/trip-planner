@@ -6,7 +6,9 @@ Vue.use(Vuex)
 export const store = new Vuex.Store({
   state: {
     from: '',
-    to: ''
+    to: '',
+    dep: '',
+    arr: ''
   },
   mutations: { 
     changeFrom(state, from) {
@@ -14,10 +16,18 @@ export const store = new Vuex.Store({
     },
     changeTo(state, to) {
       state.to = to
+    },
+    depDate(state, dep) {
+      state.dep = dep
+    },
+    arrDate(state, arr) {
+      state.arr = arr
     }
   },
   getters: {
     from: state => state.from,
-    to: state => state.to
+    to: state => state.to,
+    dep: state => state.dep,
+    arr: state => state.arr
   }
 })

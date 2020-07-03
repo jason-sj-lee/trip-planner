@@ -19,7 +19,7 @@ export default {
     ResultsFood
   },
   data() {
-    return {accessToken: 'oCCb8HS2kmxYOYvGOxqpC75CBPLT'}
+    return {accessToken: 'R1G2URHZs3Om2Auhmtd167hApcAY'}
   }
 };
 </script>
