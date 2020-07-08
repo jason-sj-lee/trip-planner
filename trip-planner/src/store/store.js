@@ -8,7 +8,9 @@ export const store = new Vuex.Store({
     from: '',
     to: '',
     dep: '',
-    arr: ''
+    arr: '',
+    adults: null,
+    children: null
   },
   mutations: { 
     changeFrom(state, from) {
@@ -22,12 +24,20 @@ export const store = new Vuex.Store({
     },
     arrDate(state, arr) {
       state.arr = arr
+    },
+    changeAdults(state, adults) {
+      state.adults = adults
+    },
+    changeChildren(state, children) {
+      state.adults = children
     }
   },
   getters: {
     from: state => state.from,
     to: state => state.to,
     dep: state => state.dep,
-    arr: state => state.arr
+    arr: state => state.arr,
+    adults: state => state.adults,
+    children: state => state.children
   }
 })

@@ -8,7 +8,9 @@
           <from-to fromTo="To"></from-to>
           <dep-arr></dep-arr>
           <div class="break"></div>
-          <budget></budget>
+          <people numOfPeople="Number of Adults"></people>
+          <people numOfPeople="Number of Children"></people>
+          <budget class="budget-btn"></budget>
       </v-row>
     </div>
   </div>
@@ -19,13 +21,15 @@
 import FromTo from '@/components/FromTo'
 import DepArr from '@/components/DepArr'
 import Budget from '@/components/Budget'
+import People from '@/components/People'
 
 export default {
   name: 'Home',
   components: {
     FromTo,
     DepArr,
-    Budget
+    Budget,
+    People
   }
 }
 </script>
@@ -49,7 +53,7 @@ export default {
     outline: none;
     border-radius: 15px;
     
-    height: 40%;
+    height: 50%;
     width: 90%;
     margin-top: 12%;
 
@@ -68,6 +72,10 @@ export default {
   .break {
     flex-basis: 100%;
     height: 0;
+  }
+
+  .budget-btn {
+    
   }
 </style>
 
