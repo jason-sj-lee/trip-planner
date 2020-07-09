@@ -2,14 +2,12 @@
   <div class="about">
     <results-plane :atoken="this.$data.accessToken"></results-plane>
     <results-hotel :atoken="this.$data.accessToken"></results-hotel>
-    <results-food :atoken="this.$data.accessToken"></results-food>
   </div>
 </template>
 
 <script>
 import ResultsPlane from "../components/ResultsPlane";
 import ResultsHotel from "../components/ResultsHotel";
-import ResultsFood from "../components/ResultsFood";
 
 import { store } from "../store/store"
 
@@ -18,12 +16,11 @@ export default {
   components: {
     ResultsPlane,
     ResultsHotel,
-    ResultsFood
   },
   data() {
     return {
       store: store,
-      accessToken: '18J7jNumAb5PhgdGZ7O1cW1NpERF',
+      accessToken: '946JfOxyI1VZfslDZ6HPF8B51c73',
       from: store.state.from,
       to: store.state.to,
       arr: store.state.arr,
