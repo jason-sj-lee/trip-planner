@@ -30,7 +30,7 @@ export default {
   mounted() {
     axios
       .request({
-        url: "/shopping/hotel-offers?cityCode=PAR&adults=1&radius=5&radiusUnit=KM&paymentPolicy=NONE&includeClosed=false&bestRateOnly=true&view=FULL&sort=PRICE",
+        url: "/shopping/hotel-offers?cityCode=PAR&adults=1&radius=5&radiusUnit=KM&paymentPolicy=NONE&includeClosed=false&bestRateOnly=true&view=FULL&sort=PRICE&max=5",
         method: "get",
         baseURL: "https://test.api.amadeus.com/v2",
         headers: {
