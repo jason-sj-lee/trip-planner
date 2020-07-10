@@ -40,7 +40,7 @@ export default {
     axios
       .request({
         url:
-          "/shopping/flight-offers?originLocationCode=SYD&destinationLocationCode=" + this.cityObj[this.$store.state.to] + "&departureDate=2020-08-01&returnDate=2020-08-05&adults=1&max=3",
+          "/shopping/flight-offers?originLocationCode=" +this.cityObj[this.$store.state.from] + "&destinationLocationCode=" + this.cityObj[this.$store.state.to] + "&departureDate=" + this.$store.state.dep + "&returnDate=" + this.$store.state.arr + "&adults=" + this.$store.state.adults + "&max=3",
         method: "get",
         baseURL: "https://test.api.amadeus.com/v2",
         headers: {
