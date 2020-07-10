@@ -20,7 +20,7 @@ export default {
   data() {
     return {
       store: store,
-      accessToken: 'KdZXf4dAA0kdXiyOWdEsWYHwq5ej',
+      Token: '5GTQ4PivdI3Ycb1Mvscn8lDsLnWt',
       from: store.state.from,
       to: store.state.to,
       arr: store.state.arr,
