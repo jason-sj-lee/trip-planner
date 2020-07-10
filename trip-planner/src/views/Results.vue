@@ -1,7 +1,7 @@
 <template>
   <div class="about">
     <results-plane :atoken="this.$data.accessToken"></results-plane>
-    <results-hotel :atoken="this.$data.accessToken"></results-hotel>
+    <results-hotel :atoken="this.$data.accessToken" :cityObj="this.$data.cityCodes"></results-hotel>
   </div>
 </template>
 
@@ -20,11 +20,31 @@ export default {
   data() {
     return {
       store: store,
-      accessToken: '946JfOxyI1VZfslDZ6HPF8B51c73',
+      accessToken: 'KdZXf4dAA0kdXiyOWdEsWYHwq5ej',
       from: store.state.from,
       to: store.state.to,
       arr: store.state.arr,
-      dep: store.state.dep
+      dep: store.state.dep,
+      cityCodes: {
+        "London": "LON", 
+        "New York": "NYC", 
+        "Paris": "PAR", 
+        "Tokyo": "TYO", 
+        "Moscow": "MOW", 
+        "Dubai": "DXB", 
+        "Singapore": "SIN", 
+        "Barcelona": 'BCN',
+        "Los Angeles": "LAX",
+        "Rome": "ROM", 
+        "San Fransisco": "SFO",
+        "Madrid": "MAD", 
+        "Chicago": "CHI", 
+        "Amsterdamn": "AMS", 
+        "Beijing": "PEK", 
+        "Toronto": "TOR", 
+        "Hong Kong": "HKG",
+        "Seoul": "SEL"
+      }
     }
   }
 };

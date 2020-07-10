@@ -10,6 +10,7 @@
 
 <script>
 import { axios } from "@/plugins/axios";
+
 export default {
   props: {
     atoken: { required: true, type: String }
@@ -23,7 +24,7 @@ export default {
   mounted() {
     axios
       .request({
-        url: "/shopping/flight-offers?originLocationCode=SYD&destinationLocationCode=BKK&departureDate=2020-08-01&returnDate=2020-08-05&adults=1",
+        url: "/shopping/flight-offers?originLocationCode=PAR&destinationLocationCode=BKK&departureDate=2020-08-01&returnDate=2020-08-05&adults=1&max=3",
         method: "get",
         baseURL: "https://test.api.amadeus.com/v2",
         headers: {
