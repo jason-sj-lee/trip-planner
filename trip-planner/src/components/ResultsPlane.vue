@@ -5,19 +5,19 @@
     <div class="flight" v-for="flight in flights" :key="flight.id">
       <div class="departure">
         <v-icon large>mdi-airplane-takeoff</v-icon>
-        <li>{{ (flight.itineraries[0].segments[0].departure.at).substring(11,16) }} - {{ (flight.itineraries[0].segments[flight.itineraries[0].segments.length -1].arrival.at).substring(11,16) }}</li>
+        <li class="times">{{ (flight.itineraries[0].segments[0].departure.at).substring(11,16) }} - {{ (flight.itineraries[0].segments[flight.itineraries[0].segments.length -1].arrival.at).substring(11,16) }}</li>
         <li>{{flight.itineraries[0].segments[0].departure.iataCode}} - {{flight.itineraries[0].segments[flight.itineraries[0].segments.length -1].arrival.iataCode}}</li>
         <li>{{ (flight.itineraries[0].duration).substr(2) }}</li>
         <li>{{ flight.itineraries[0].segments.length }} stops</li>
       </div>
       <div class="returning">
         <v-icon large>mdi-airplane-landing</v-icon>
-        <li>{{ (flight.itineraries[1].segments[0].departure.at).substring(11,16) }} - {{ (flight.itineraries[0].segments[flight.itineraries[1].segments.length -1].arrival.at).substring(11,16) }}</li>
+        <li class="times">{{ (flight.itineraries[1].segments[0].departure.at).substring(11,16) }} - {{ (flight.itineraries[0].segments[flight.itineraries[1].segments.length -1].arrival.at).substring(11,16) }}</li>
         <li>{{flight.itineraries[1].segments[0].departure.iataCode}} - {{flight.itineraries[1].segments[flight.itineraries[0].segments.length -1].arrival.iataCode}}</li>
         <li>{{ (flight.itineraries[1].duration).substr(2) }}</li>
         <li>{{ flight.itineraries[1].segments.length }} stops</li>
       </div>
-      <h4 class="price">{{ flight.price.total }} &euro;</h4>
+      <h4 class="price">&euro;{{ flight.price.total }} </h4>
     </div>
   </div>
 </template>
@@ -27,7 +27,8 @@ import { axios } from "@/plugins/axios";
 
 export default {
   props: {
-    atoken: { required: true, type: String }
+    atoken: { required: true, type: String },
+    cityObj: Object
   },
 
   data() {
@@ -39,7 +40,7 @@ export default {
     axios
       .request({
         url:
-          "/shopping/flight-offers?originLocationCode=SYD&destinationLocationCode=BKK&departureDate=2020-08-01&returnDate=2020-08-05&adults=1&max=3",
+          "/shopping/flight-offers?originLocationCode=SYD&destinationLocationCode=" + this.cityObj[this.$store.state.to] + "&departureDate=2020-08-01&returnDate=2020-08-05&adults=1&max=3",
         method: "get",
         baseURL: "https://test.api.amadeus.com/v2",
         headers: {
@@ -71,7 +72,11 @@ export default {
   height: 150px;
 }
 
+.times, .price {
+  font-weight: 600;
+}
 .price {
   margin-top: 60px;
+
 }
 </style>

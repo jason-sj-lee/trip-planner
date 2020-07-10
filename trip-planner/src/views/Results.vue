@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <results-plane :atoken="this.$data.accessToken"></results-plane>
+    <results-plane :atoken="this.$data.accessToken" :cityObj="this.$data.cityCodes"></results-plane>
     <results-hotel :atoken="this.$data.accessToken" :cityObj="this.$data.cityCodes"></results-hotel>
   </div>
 </template>
@@ -20,7 +20,7 @@ export default {
   data() {
     return {
       store: store,
-      Token: '5GTQ4PivdI3Ycb1Mvscn8lDsLnWt',
+      accessToken: 'YIEpjOOnt2zPIpolydGqViZaTHcU',
       from: store.state.from,
       to: store.state.to,
       arr: store.state.arr,
