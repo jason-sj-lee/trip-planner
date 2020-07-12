@@ -1,11 +1,12 @@
 <template>
   <div class="list">
-    <v-icon x-large>mdi-bed</v-icon>
-    <p>name: {{ this.name }}</p>
-    <p>rating: {{ this.rating }} stars</p>
-    <p>check-in: {{ this.checkInDate }}</p>
-    <p>check-out: {{ this.checkOutDate }}</p>
-    <p>price: {{ this.currency }} {{ this.price }}</p>
+    <h1>hotels</h1>
+    <v-card outlined v-for="(hotel) in hotels" :key="hotel.id">
+      <v-card-title>{{ hotel.hotel.name }}</v-card-title>
+      <v-card-subtitle>{{ hotel.hotel.rating}} stars</v-card-subtitle>
+      <v-card-text>{{ hotel.hotel.description.text.substring(0,100)+".."  }}</v-card-text>
+      <v-card-title>{{ hotel.offers[0].price.total }} {{ hotel.offers[0].price.currency }}</v-card-title>
+    </v-card>
   </div>
 </template>
 
@@ -19,19 +20,14 @@ export default {
   },
   data: function() {
     return {
-      name: '',
-      rating: '',
-      checkInDate: '',
-      checkOutDate: '',
-      currency: '',
-      price: ''
+      hotels: null
     }
   },
 
   mounted() {
     axios
       .request({
-        url: "/shopping/hotel-offers?cityCode=" + this.cityObj[this.$store.state.to] + "&adults=1&radius=5&radiusUnit=KM&paymentPolicy=NONE&includeClosed=false&bestRateOnly=true&view=FULL&sort=PRICE",
+        url: "/shopping/hotel-offers?cityCode=" + this.cityObj[this.$store.state.to] + "&adults=" + this.$store.state.adults+ "&radius=5&radiusUnit=KM&paymentPolicy=NONE&includeClosed=false&bestRateOnly=true&sort=NONE&view=FULL&checkInDate=" + this.$store.state.dep + "&checkOutDate=" + this.$store.state.arr,
         method: "get",
         baseURL: "https://test.api.amadeus.com/v2",
         headers: {
@@ -40,17 +36,18 @@ export default {
       })
       .then(response => {
         console.log(response.data);
-        console.log("name:", response.data.data[0].hotel.name);
-        this.name = response.data.data[0].hotel.name;
-        console.log("rating:", response.data.data[0].hotel.rating, "stars");
-        this.rating = response.data.data[0].hotel.rating
-        console.log("check-in:", response.data.data[0].offers[0].checkInDate);
-        this.checkInDate = response.data.data[0].offers[0].checkInDate
-        console.log("check-out:", response.data.data[0].offers[0].checkOutDate);
-        this.checkOutDate = response.data.data[0].offers[0].checkOutDate
-        console.log("price:", response.data.data[0].offers[0].price.currency, response.data.data[0].offers[0].price.total)
-        this.currency = response.data.data[0].offers[0].price.currency
-        this.price = response.data.data[0].offers[0].price.total
+        this.hotels = response.data.data
+        // console.log("name:", response.data.data[0].hotel.name);
+        // this.name = response.data.data[0].hotel.name;
+        // console.log("rating:", response.data.data[0].hotel.rating, "stars");
+        // this.rating = response.data.data[0].hotel.rating
+        // console.log("check-in:", response.data.data[0].offers[0].checkInDate);
+        // this.checkInDate = response.data.data[0].offers[0].checkInDate
+        // console.log("check-out:", response.data.data[0].offers[0].checkOutDate);
+        // this.checkOutDate = response.data.data[0].offers[0].checkOutDate
+        // console.log("price:", response.data.data[0].offers[0].price.currency, response.data.data[0].offers[0].price.total)
+        // this.currency = response.data.data[0].offers[0].price.currency
+        // this.price = response.data.data[0].offers[0].price.total
       });
   }
 };
@@ -58,7 +55,6 @@ export default {
 
 <style scoped>
 .list {
-  border: green 1px solid;
   width: 30%;
   height: 100%;
 }

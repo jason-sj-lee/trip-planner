@@ -35,7 +35,6 @@
           </v-row>
         </template>
         <v-date-picker v-model="dates" range>
-          <!-- <v-spacer></v-spacer> -->
           <v-btn text color="primary" @click="modal=false">Cancel</v-btn>
           <v-btn text color="primary" @click="$refs.dialog.save(dates)">OK</v-btn>
         </v-date-picker>
