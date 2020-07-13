@@ -10,7 +10,7 @@
           <div class="break"></div>
           <people numOfPeople="Number of Adults"></people>
           <people numOfPeople="Number of Children"></people>
-          <budget class="budget-btn"></budget>
+          <router-link to="/results"><budget class="budget-btn"></budget></router-link>
       </v-row>
     </div>
   </div>
@@ -72,10 +72,6 @@ export default {
   .break {
     flex-basis: 100%;
     height: 0;
-  }
-
-  .budget-btn {
-    
   }
 </style>
 

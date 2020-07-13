@@ -4,7 +4,7 @@
     <v-card outlined v-for="(hotel) in hotels" :key="hotel.id">
       <v-card-title>{{ hotel.hotel.name }}</v-card-title>
       <v-card-subtitle>{{ hotel.hotel.rating}} stars</v-card-subtitle>
-      <v-card-text>{{ hotel.hotel.description.text.substring(0,100)+".."  }}</v-card-text>
+      <v-card-text>{{ hotel.hotel.description.text.substring(0,100)+"..."  }}</v-card-text>
       <v-card-title>{{ hotel.offers[0].price.total }} {{ hotel.offers[0].price.currency }}</v-card-title>
     </v-card>
   </div>
